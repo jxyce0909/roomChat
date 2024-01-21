@@ -3,7 +3,7 @@ import { customAlphabet } from "nanoid";
 import { PiArrowClockwiseLight } from "react-icons/pi";
 import "react-color-palette/css";
 import { ColorPicker } from '@/components/ColorPicker';
-
+import { useRouter } from 'next/router';
 
 export default function Home() {
 
@@ -14,12 +14,18 @@ export default function Home() {
     setName(nanoid(4));
   }, []);
   
+  const router = useRouter();
+  
+  const handleClick = (e: any) => {
+    e.preventDefault()
+    router.push('/chat')
+  }
 
   return (
     <main className=''>
       <div className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden">
         <div className="w-full p-6 bg-white rounded-md shadow-md lg:max-w-xl">
-          <h1 className="text-3xl font-bold text-center text-gray-700">Room Chat</h1>
+          <h1 className="text-3xl font-bold text-center text-gray-700">PicOrChat</h1>
           <form className="mt-6">
             <div className="mb-4">
               <label
@@ -50,7 +56,7 @@ export default function Home() {
             <div className="mb-1"/>
             <ColorPicker/>
             <div className="mt-2">
-              <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">
+              <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600" onClick={handleClick}>
                 View Rooms
               </button>
             </div>
