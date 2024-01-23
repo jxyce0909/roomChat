@@ -1,15 +1,28 @@
 import React from 'react';
 import { Chatbox } from '@/components/Chatbox';
 import { SendMessage } from '@/components/SendMessage';
+import { Navbar } from '@/components/Navbar';
 
 const chat = () => {
   return (
-    <div className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden">
-        <div className='w-full p-6 bg-white rounded-md shadow-md lg:max-w-xl'>
-            <Chatbox/>
-            <SendMessage/>
+    <main className='main'>
+      <div className='text align-top'>
+        <Navbar/>
+        <div className="card lg:card-side bg-white shadow-xl">
+          <div className='flex flex-col w-full'>
+            <div className='card-body'>
+                <Chatbox/>
+            </div>
+            <div className='sticky bottom-0'>
+              <div className="divider"></div> 
+              <div>
+                <SendMessage/>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
+      </div>
+    </main>
   )
 }
 

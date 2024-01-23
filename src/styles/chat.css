@@ -1,0 +1,52 @@
+.card {
+    width: 1200px;
+    max-width: calc(100% - 20px);
+    margin: 0 auto;
+    padding: 0 10px;
+    height: fit-content;
+    border-radius: 0px 0px 0.625rem 0.625rem; 
+  }
+
+  *::-webkit-scrollbar {
+    width: 0.313rem;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 0.313rem;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border-radius: 0.875rem;
+    border: none;
+  }
+
+  .card-body {
+    display: inline-block;
+    overflow-y: auto;
+  }
+
+  .text {
+    font-size: small;
+    overflow-x: none;
+    font-size: 20px;
+    padding-top: 1rem;
+    padding-left: 20px;
+    overflow-y: auto;
+  }
+
+  .navbar {
+    border-radius: 0.625rem 0.625rem 0px 0px;
+    color: white;
+    width: 1200px;
+    max-width: calc(100% - 20px);
+    margin: 0 auto;
+    padding: 0 10px;
+  }
+
+/* .h1 {
+    border-bottom: 1px solid black;
+    display: inline-block;
+    width:200px;
+} */
