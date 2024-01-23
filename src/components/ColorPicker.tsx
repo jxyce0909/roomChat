@@ -8,7 +8,7 @@ export const ColorPicker = () => {
     }
   return (
     <div className="color-picker-container">
-        <input type="color" value={color} onChange={colorChange}/>
+        <input type="color" id='color' value={color} onChange={colorChange}/>
     </div>
   )
 }

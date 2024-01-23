@@ -36,6 +36,7 @@ export default function Home() {
               </label>
               <input
                 type="text"
+                id='username'
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
