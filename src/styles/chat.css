@@ -45,8 +45,35 @@
     padding: 0 10px;
   }
 
-/* .h1 {
-    border-bottom: 1px solid black;
-    display: inline-block;
-    width:200px;
-} */
+  .input::placeholder {
+    color: #94a3b8;
+  }
+
+  .inputColor{
+    display: flex;
+    flex-direction: row;
+  }
+
+  /*Picker from https://codesandbox.io/p/sandbox/react-colorful-popover-opmco?file=%2Fsrc%2FPopoverPicker.js%3A2%2C10-2%2C24*/
+
+  .picker {
+    position: relative;
+  }
+  
+  .swatch {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+  
+  .popover {
+    z-index: 1;
+    position: absolute;
+    top: calc(100% + 2px);
+    left: 0;
+    border-radius: 9px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
