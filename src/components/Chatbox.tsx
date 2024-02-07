@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Message } from './Message'
 import { collection, query, where, onSnapshot } from "firebase/firestore";
 import { db } from '@/firebase';
 
 export const Chatbox = () => {
-
+  const [msges, setMsges] = useState('');
   const messages = [{
     id: 1,
     text: "Hello Eric!",
@@ -20,13 +20,14 @@ export const Chatbox = () => {
   useEffect(() => {
     const q = query(collection(db, "messages"));
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
-      const messages = [];
+      var messages: any[] = [];
       querySnapshot.forEach((doc) => {
-        // msges.push(doc.data().name);
-        console.log(doc.data());
+        messages.push({...doc.data(), id: doc.id});
+        // console.log(doc.data());
       });
-
+      console.log(messages)
     });
+    return unsubscribe
   })
   return (
     <div>
