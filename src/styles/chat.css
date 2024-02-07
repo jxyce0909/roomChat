@@ -1,11 +1,12 @@
-.card {
+  .card {
     width: 1200px;
     max-width: calc(100% - 20px);
     margin: 0 auto;
     padding: 0 10px;
-    height: fit-content;
+    height: 565px;
     border-radius: 0px 0px 0.625rem 0.625rem; 
   }
+
 
   *::-webkit-scrollbar {
     width: 0.313rem;
@@ -27,13 +28,18 @@
     overflow-y: auto;
   }
 
+  .chat-start .chat-bubble{
+    overflow: hidden;
+    overflow-y: auto;
+  }
+
   .text {
     font-size: small;
     overflow-x: none;
     font-size: 20px;
     padding-top: 1rem;
     padding-left: 20px;
-    overflow-y: auto;
+    overflow: hidden;
   }
 
   .navbar {

@@ -1,11 +1,14 @@
 'use client'
-
 import { useState, useEffect } from 'react'
 import { customAlphabet } from "nanoid";
 import { PiArrowClockwiseLight } from "react-icons/pi";
 import "react-color-palette/css";
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import { ColorPick } from '@/components/ColorPick';
+import { collection, addDoc } from "firebase/firestore";
+import { db } from '@/firebase';
+
 export default function Home() {
 
   const [name, setName] = useState("")
@@ -23,18 +26,20 @@ export default function Home() {
     setOpen(!open)
   }
   
-  const submitHandler = (e: any) => {
+  const submitHandler = async(e: any) => {
     e.preventDefault()
     if(!name || !color){
       console.log("all fields are required!")
     }
     try {
-      console.log("Name:", name);
-      console.log("Color:", color);
+      await addDoc(collection(db, "users"), {
+        name: name,
+        color: color
+
+      })
     } catch (error) {
       
     }
-    router.push('/chat')
   }
 
   return (
@@ -77,9 +82,19 @@ export default function Home() {
               <input type="text" value={color} onChange={(e) => setColor(e.target.value)} placeholder="Type here" className="ml-2 block w-50 h-8 px-4 py-2 text-gray-700 bg-white border rounded-md focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40" />
             </div>
             <div className="mt-3">
+            <Link
+              href={{
+                pathname: "/chat",
+                query: {
+                  name: name,
+                  color: color
+                }
+              }}
+              >
               <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">
                 Enter Room
               </button>
+              </Link>
             </div>
           </form>
         </div>

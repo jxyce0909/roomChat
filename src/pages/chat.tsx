@@ -4,8 +4,9 @@ import { SendMessage } from '@/components/SendMessage';
 import { Navbar } from '@/components/Navbar';
 
 const chat = () => {
+
   return (
-    <main className='main'>
+    <main className='chatMain'>
       <div className='text align-top'>
         <Navbar/>
         <div className="card lg:card-side bg-white shadow-xl">
@@ -16,7 +17,7 @@ const chat = () => {
             <div className='sticky bottom-0'>
               <div className="divider"></div> 
               <div>
-                <SendMessage/>
+                <SendMessage />
               </div>
             </div>
           </div>
