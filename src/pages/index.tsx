@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react'
 import { customAlphabet } from "nanoid";
 import { PiArrowClockwiseLight } from "react-icons/pi";
 import "react-color-palette/css";
-import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { ColorPick } from '@/components/ColorPick';
 import { collection, addDoc } from "firebase/firestore";
@@ -19,8 +18,7 @@ export default function Home() {
   useEffect(() => {
     setName(nanoid(4));
   }, []);
-  
-  const router = useRouter();
+
 
   const handleOpen = () => {
     setOpen(!open)

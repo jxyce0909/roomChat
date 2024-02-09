@@ -2,12 +2,10 @@ import React from 'react'
 
 export const Message = (props: any) => {
 
-  const colorString = props.color.replace()
-
   return (
     <div>
         <div className="chat chat-start">
-            <div className={`chat-header text-[props.]`}>
+            <div className={`chat-header font-medium text-[${props.color}]`}>
                 {props.name}
             </div>
             <div className="chat-bubble bg-gray-300">{props.txt}</div>

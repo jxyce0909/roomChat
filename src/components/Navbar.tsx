@@ -1,12 +1,27 @@
 import React from 'react'
 import { useRouter } from 'next/router';
+import { doc, deleteDoc } from "firebase/firestore";
+import { db } from '@/firebase';
+import firebase from 'firebase/compat/app';
+import { useSearchParams } from 'next/navigation';
 
 export const Navbar = () => {
 
     const router = useRouter();
+    const searchParams = useSearchParams();
   
-    const handleHomePage = (e: any) => {
+    const handleHomePage = async(e: any) => {
       e.preventDefault()
+      // try {
+      //   //delete message data from the current user + delete current user
+      //   const userId = await firebase.firestore().collection("users")
+
+      //   if(userId){
+      //     await firebase.firestore().collection("users").doc(userId.id).delete()
+      //   }
+      // } catch (error) {
+        
+      // }
       router.push('/')
     }
 

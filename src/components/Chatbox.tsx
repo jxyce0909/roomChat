@@ -19,7 +19,6 @@ export const Chatbox = () => {
       querySnapshot.forEach((doc) => {
         messages.push({...doc.data(), id: doc.id});
       });
-      setMessages(messages)
     });
     return unsubscribe
   })
@@ -28,7 +27,7 @@ export const Chatbox = () => {
   return (
     <div>
       {messages.map(message => (
-        <Message key={message.id} txt={message.text} name={message.name} createdAt={message.createdAt} />
+        <Message key={message.id} txt={message.text} color={message.color} name={message.name} createdAt={message.createdAt} />
       ))}
     </div>
   )
